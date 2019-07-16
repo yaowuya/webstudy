@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<!--学习的行内标签和 块级元素分别有哪些?
+行内标签:span, strong, a, img, input, textarea
+块级元素:div, h1-h6, p, hr, pre, ul, ol, dd, dt, th. tr, td
+两者的区别与特性；
+1).块级元素独占一行空间， 行内元素只占据自身宽度的空间;
+2).块级元素是可以包含块级元素和行内元素; 行内元素只能包含文本信息和行内元素;
+3). 块级元素可以设置宽和高， 行内元素设置的宽和高失效；
+如何让块级元素居中? 如何让行内元素居中?
+1); 块级元素居中： margin: 0 auto
+2> 行内元素居中: text-aligin:center-->
+<span style="color: green"><div style="color: red">hello</div></span>
+<div style="color: green"><span style="color: red">hello</span></div>
+<span style=" border: 1px solid red; text-align:center">hello</span><br/>
+<span style="width: 200px; height: 200px; border: 1px solid chartreuse">world</span><br>
+<div style="width: 100px; height: 100px; border-radius:25px;border: 1px solid blueviolet;
+    box-shadow: 1px 1px 3px #888888;">hello
+</div>
+<br>
+<div style="width: 100px; height: 100px; border: 1px solid aquamarine">world</div>
+he<strong>llo</strong><br>
+<span>hello</span><br>
+<!--margin: 0 auto; 就是上下距离为0, auto就是左右自适应两边距离一样-->
+<div style="text-align: center; width: 100px; height: 100px; border-radius:25px;
+border: 1px solid blueviolet; margin: 0 auto">hello
+</div>
+<div>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <textarea></textarea>
+    <textarea></textarea>
+    <textarea></textarea>
+    <textarea></textarea>
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+</div>
+</body>
+</html>

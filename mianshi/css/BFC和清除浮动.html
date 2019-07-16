@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .box{
+            overflow: hidden;//触发BFC
+        }
+        .box p{
+            width: 100px;
+            height: 100px;
+            background-color: antiquewhite;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <p></p>
+</div>
+<div class="box">
+    <p></p>
+</div>
+<div>
+    <div style="height: 100px;width: 100px;float: left;background: lightblue">我是一个左浮动的元素</div>
+    <div style="width: 200px; height: 200px;background: grey">我是一个没有设置浮动,
+        也没有触发 BFC 元素, width: 200px; height:200px; background: grey;</div>
+</div>
+<div>
+    <div style="height: 100px;width: 100px;float: left;background: lightblue">我是一个左浮动的元素</div>
+    <div style="background: grey;overflow:hidden">我是一个没有设置浮动,
+        也没有触发 BFC 元素, width: 200px; height:200px; background: grey;</div>
+
+</div>
+</body>
+</html>

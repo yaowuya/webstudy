@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直水平居中</title>
+    <style type="text/css">
+        .box-container {
+            position: relative;
+            width: 100px;
+            height: 80px;
+            background-color: olivedrab;
+        }
+
+        .box-container .box {
+            width: 50px;
+            height: 40px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -25px;
+            margin-top: -20px;
+            background-color: rebeccapurple;
+        }
+        .p-box{
+            position: relative;
+            background-color: yellow;
+            width: 100px;
+            height: 80px;
+        }
+        .p-box .c-box{
+            position: absolute;
+            width: 60px;
+            height: 50px;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: aqua;
+        }
+        .t-container{
+            position: relative;
+            background-color: yellow;
+            width: 100px;
+            height: 80px;
+        }
+        .t-container .t-box{
+            position: relative;
+            width: 10px;
+            height: 10px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            background-color: red;
+        }
+        .f-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: yellow;
+            width: 100px;
+            height: 150px;
+        }
+        .f-container .f-box{
+            background-color: red;
+            width: 50px;
+            height: 60px;
+        }
+        .c-container{
+            background-color: yellow;
+            width: 100px;
+            height: 150px;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .c-container .c-box{
+            background-color: rebeccapurple;
+            width: 50px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h2>已知宽高</h2>
+    <p>定位 + margin-top + margin-left</p>
+    <div class="box-container">
+        <div class="box">
+
+        </div>
+    </div>
+    <p>定位 + margin</p>
+    <div class="p-box">
+        <div class="c-box"></div>
+    </div>
+    <h2>未知宽高</h2>
+    <p>transform 方案: 存在兼容问题</p>
+    <div class="t-container">
+        <div class="t-box"></div>
+    </div>
+    <p>flexbox 方案: 存在兼容问题</p>
+    <div class="f-container">
+        <div class="f-box"></div>
+    </div>
+    <p>display: table-cell 无兼容性问题</p>
+    <div class="c-container">
+        <p>12da32</p>
+    </div>
+</body>
+</html>
