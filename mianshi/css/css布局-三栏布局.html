@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            position: relative;
+            overflow: hidden;/*//清除浮动*/
+        }
+        .c-1 .left{
+            width: 200px;height: 300px; background: yellow; float: left;
+        }
+        .c-1 .right{
+            width: 150px; height: 300px; background: green; float: right;
+        }
+        .c-1 .middle{
+            height: 300px; background: red; margin-left: 220px; margin-right: 160px;
+        }
+        .c-2 .left{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            min-height: 300px;
+            background-color: yellow;
+        }
+        .c-2 .right{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            min-height: 300px;
+            background-color: orangered;
+        }
+        .c-2 .middle{
+            background-color: green;
+            margin-left: 200px;
+            margin-right: 300px;
+            min-height: 300px;
+        }
+        .c-3 .middle{
+            background-color: green;
+            min-height: 300px;
+            float: left;
+            width: 100%;
+        }
+        .c-3 .middle .main{
+            margin: 0 220px;
+            background: red;
+        }
+        .c-3 .left{
+            float: left;
+            width: 200px;
+            min-height: 300px;
+            background-color: yellow;
+            margin-left: -100%;
+        }
+        .c-3 .right{
+            float: left;
+            width: 200px;
+            min-height: 300px;
+            background-color: orangered;
+            margin-left: -200px;
+        }
+        .c-4{
+            display: flex;
+        }
+        .c-4 .left{
+            width: 200px;
+            min-height: 300px;
+            background-color: yellow;
+        }
+        .c-4 .right{
+            width: 200px;
+            min-height: 300px;
+            background-color: orangered;
+        }
+        .c-4 .middle{
+            flex: 1;
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+<h5>
+    1.使用左右两栏使用float属性，中间栏使用margin属性进行撑开，注意的是html的结果.
+    缺点是：1. 当宽度小于左右两边宽度之和时，右侧栏会被挤下去；2. html的结构不正确
+</h5>
+<div class="container c-1">
+    <div class="left">左栏</div>
+    <div class="right">右栏</div>
+    <div class="middle">中间栏</div>
+</div>
+<h5>
+    2. 使用position定位实现，即左右两栏使用position进行定位，中间栏使用margin进行定位.
+    缺点时：当父元素有内外边距时，会导致中间栏的位置出现偏差,但是可以通过设置css初始化解决
+</h5>
+<div class="container c-2">
+    <div class="left">左栏</div>
+    <div class="right">右栏</div>
+    <div class="middle">中间栏</div>
+</div>
+<h5>
+    3. 使用float和BFC配合圣杯布局
+    缺点是：1. 结构不正确 2. 多了一层标签
+</h5>
+<div class="container c-3">
+    <div class="middle">
+        <div class="main">
+            中间栏
+        </div>
+    </div>
+    <div class="left">左栏</div>
+    <div class="right">右栏</div>
+</div>
+<h5>
+    4. flex布局
+    除了兼容性，一般没有太大的缺陷
+</h5>
+<div class="container c-4">
+    <div class="left">左栏</div>
+    <div class="middle">中间栏</div>
+    <div class="right">右栏</div>
+</div>
+</body>
+</html>

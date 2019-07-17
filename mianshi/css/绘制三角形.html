@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制三角形</title>
+    <style type="text/css">
+        .triangle {
+            width: 100px;
+            height: 100px;
+            border-style: solid;
+            border-width: 50px 50px 50px 50px;
+            border-color: yellow blue red green;
+        }
+
+        .triangle-1 {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 50px 50px 50px 50px;
+            border-color: yellow blue red green;
+        }
+
+        .triangle-2 {
+            width: 100px;
+            height: 100px;
+            border-style: solid;
+            border-width: 50px 50px 0px 0px;
+            border-color: yellow blue red green;
+        }
+
+        .triangle-3 {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0px 50px 50px 50px;
+            border-color: yellow transparent red transparent;
+        }
+
+        .triangle-4 {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0px 51px 52px 51px;
+            border-color: yellow transparent gray transparent;
+            position: relative;
+        }
+
+        .triangle-4::after {
+            content: "";
+            position: absolute;
+            top: 1px;
+            left: -50px;
+            border-style: solid;
+            border-width: 0px 50px 50px;
+            border-color: yellow transparent white;
+        }
+        .triangle-5 {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0px 50px 50px 0px;
+            border-color: yellow transparent green green;
+        }
+    </style>
+</head>
+<body>
+<p>
+    当div宽高都为0时，border只设置一边是不生效的，因为宽度为0
+</p>
+<div class="triangle"></div>
+<div class="triangle-1"></div>
+<div class="triangle-2"></div>
+<div class="triangle-3"></div>
+<div class="triangle-4"></div>
+<div class="triangle-5"></div>
+</body>
+</html>
