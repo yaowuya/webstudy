@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用 div 模拟 textarea 标签</title>
+    <style type="text/css">
+        .textarea{
+            height: 200px;
+            width: 300px;
+            padding: 4px;
+            border: 1px solid #888888;
+            resize: vertical;
+            overflow: auto;
+        }
+        .textarea:empty:before {
+            content: attr(aria-placeholder);
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+   <div class="textarea" contenteditable="true" aria-placeholder="this is placeholder"></div>
+</body>
+</html>
