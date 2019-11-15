@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>1px物理像素</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-bottom: 1px solid #000000;
+            background-color: red;
+        }
+    </style>
+    <!--    像素比=物理像素/css像素-->
+</head>
+<body>
+<div id="box">
+</div>
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+        // 像素比
+        let dpr = window.devicePixelRatio;
+        console.log(dpr);
+        //缩放比例
+        let scale = 1 / dpr;
+        let metaNode = document.querySelector('meta[name="viewport"]');
+        metaNode.setAttribute('content', 'width=device-width,initial-scale=' + scale + ',user-scalable=no')
+
+        //页面中元素宽度、高度，比例反向乘回来
+        let width = document.documentElement.clientWidth;
+        let htmlNode = document.querySelector('html');
+        htmlNode.style.fontSize = width * dpr + 'px';
+
+    }
+</script>
+</html>
