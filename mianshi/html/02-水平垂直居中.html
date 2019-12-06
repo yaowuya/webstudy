@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平垂直居中flex(新版和旧版)</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            width: 500px;
+            height: 500px;
+            background-color: grey;
+            position: relative;
+            float: left;
+        }
+
+        .wrap .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            top: 50%;
+            left:50%;
+            /*margin-top: -100px;*/
+            /*margin-left: -100px;*/
+            transform: translate(-50%,-50%);
+        }
+        .flex-wrap{
+            width: 500px;
+            height: 500px;
+            background-color: yellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            float: left;
+        }
+        .flex-wrap .flex-box{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box"></div>
+    </div>
+    <div class="flex-wrap">
+        <div class="flex-box">
+        </div>
+    </div>
+</body>
+</html>

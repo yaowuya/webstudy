@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数节流和防抖</title>
+    <style type="text/css">
+        html, body {
+            height: 500%;
+        }
+    </style>
+</head>
+<body>
+  <button id="btn">button</button>
+</body>
+<script>
+    //函数节流：限制一个函数在一定时间内只能执行一次。
+    function throttle(fn, wait) {
+        var last = 0;
+        return function () {
+            var now = Date.now();
+            if (now - last > wait) {
+                fn.call(this);
+                last = now;
+            }
+        }
+    }
+
+    document.onscroll = throttle(function () {
+        console.log("scroll事件触发" + Date.now());
+    }, 500)
+    // function foo(fn) {
+    //     return function () {
+    //         fn();
+    //     }
+    // }
+    //
+    // document.onscroll = foo(function () {
+    //     console.log("scroll事件触发" + Date.now());
+    // });
+
+    //函数函数防抖，就是指触发事件后在 n 秒内函数只能执行一次，
+    // 如果在 n 秒内又触发了事件，则会重新计算函数执行时间。
+    function debounce(fn, wait) {
+        var timer = null;
+        return function () {
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                fn.apply(this);
+            }, wait);
+        }
+    }
+
+    document.getElementById("btn").onclick=debounce(function () {
+        console.log("button事件触发" + Date.now());
+    },1000);
+</script>
+</html>
